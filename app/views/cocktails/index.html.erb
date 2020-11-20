@@ -12,8 +12,8 @@
     <div class="card">
       <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg" class="card-img-top">
       <div class="card-body">
-      <h2><%= link_to cocktail.name, cocktail_path(cocktail.id) %></h2> |
-      <%= link_to 'destroy', cocktail, method: :delete  %>
+      <h2><%= link_to cocktail.name, cocktail_path(cocktail.id) %></h2>
+      <%= link_to 'edit cocktail name', edit_cocktail_path(cocktail)%> | <%= link_to 'destroy', cocktail, method: :delete  %>
       </div>
     </div>
   </div>

@@ -16,14 +16,14 @@ Cocktail.create(name: 'mojito')
 require 'faker'
 
 puts 'Creating 20 fake ingredients...'
-20.times do
+1.times do
   ingredient = Ingredient.new(name: Faker::Food.ingredient)
   ingredient.save!
 end
 puts 'Finished!'
 
 puts 'Creating 20 fake fruits...'
-20.times do
+1.times do
   fruits = Ingredient.new(name: Faker::Food.fruits)
   fruits.save!
 end

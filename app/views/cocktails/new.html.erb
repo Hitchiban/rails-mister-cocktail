@@ -1,3 +1,11 @@
+<nav class="navbar fixed-top navbar-light bg-light">
+  <form class="form-inline">
+    <button class="btn btn-outline-success" type="button"><%= link_to 'add a cocktail', new_cocktail_path %></button>
+    <button class="btn btn-outline-success" type="button"><%= link_to 'back to list', cocktails_path%></button>
+  </form>
+</nav>
+
+
 <h1>create a new cocktail</h1>
 <%= simple_form_for(@cocktail) do |f| %>
 <%= f.input :name %>

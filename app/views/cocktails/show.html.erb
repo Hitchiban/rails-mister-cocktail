@@ -16,7 +16,10 @@
         <h2><%= @cocktail.name %></h2>
         <% @cocktail.doses.each do |dose| %>
         <li>
-        <%= dose.ingredient.name %>.......<%= dose.description %>
+          <div class = "recipe">
+            <%= dose.ingredient.name %>
+            <%= dose.description %>
+          </div>
         <%= link_to 'destroy', dose, method: :delete  %>
         <% end %>
         </li>

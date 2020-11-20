@@ -1,1 +1,8 @@
-<h1>edit cocktail</h1>
+<h1>edit cocktail name</h1>
+<%= simple_form_for(@cocktail) do |f| %>
+<%= f.input :name %>
+<%= f.button :submit %>
+<% end %>
+
+<%= link_to 'back to list', cocktails_path%>
+<%= link_to 'back to cocktail', cocktail_path(@cocktail)%>

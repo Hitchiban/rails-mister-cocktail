@@ -1,8 +1,24 @@
+<nav class="navbar fixed-top navbar-light bg-light">
+  <a class="navbar-brand" href="#">Fixed bottom</a>
+</nav>
+
 <h1>homepage</h1>
-<% console %>
 
-<% @cocktails.each do |cocktail| %>
-<div> <%= link_to cocktail.name, cocktail_path(cocktail.id) %></div>
-<% end %>
+<div class="row row-cols-2 row-cols-md-2">
+  <% @cocktails.each do |cocktail| %>
+  <div class="col mb-4">
+    <div class="card">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg" class="card-img-top">
+      <div class="card-body">
+      <h2><%= link_to cocktail.name, cocktail_path(cocktail.id) %></h2> |
+      <%= link_to 'destroy', cocktail, method: :delete  %>
+      </div>
+    </div>
+  </div>
+      <% end %>
+</div>
 
-<%= link_to 'add a cocktail', new_cocktail_path %> |
+<div>
+<%= link_to 'add a cocktail', new_cocktail_path, class: 'btn btn-success' %>
+</div>
+

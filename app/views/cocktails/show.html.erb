@@ -1,5 +1,18 @@
 <%= @cocktail.name  %>
 
-<div> <%= link_to 'edit cocktail', edit_cocktail_path(@cocktail) %></div>
 
-<div> <%= link_to 'back to list', cocktails_path%></div>
+<div>
+  <ul>
+  <% @cocktail.doses.each do |dose| %>
+    <li>
+    <%= dose.ingredient.name %>.......<%= dose.description %>
+    <%= link_to 'destroy', dose, method: :delete  %>
+  <% end %>
+    </li>
+  </ul>
+</div>
+<div>
+  <%= link_to 'edit cocktail name', edit_cocktail_path(@cocktail), class: 'btn btn-warning'%>
+  <%= link_to 'edit cocktail recipe', new_cocktail_dose_path(@cocktail), class: 'btn btn-warning'%>
+  <%= link_to 'back to list', cocktails_path, class: 'btn btn-success'%>
+</div>

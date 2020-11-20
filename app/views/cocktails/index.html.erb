@@ -4,13 +4,20 @@
   </form>
 </nav>
 
-<h1>homepage</h1>
+<br>
+<br>
+<br>
+<br>
+<h1>Mr & Ms Cocktail</h1>
 
 <div class="row row-cols-2 row-cols-md-2">
+
   <% @cocktails.each do |cocktail| %>
-  <div class="col mb-4">
+  <div class="col-6 col-md-3">
     <div class="card">
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg" class="card-img-top">
+      <% unless cocktail.photo.attachment.nil? %>
+        <%= cl_image_tag cocktail.photo.key, height: 300, width: 300, crop: :fill %>
+      <% end %>
       <div class="card-body">
       <h2><%= link_to cocktail.name, cocktail_path(cocktail.id) %></h2>
       <%= link_to 'edit cocktail name', edit_cocktail_path(cocktail)%> | <%= link_to 'destroy', cocktail, method: :delete  %>

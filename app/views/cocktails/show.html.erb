@@ -7,17 +7,22 @@
   </form>
 </nav>
 
-
+<br>
+<br>
+<br>
+<br>
 <div class="card-trip">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
   <div class="card-trip-infos">
+  <% unless  @cocktail.photo.attachment.nil? %>
+    <%= cl_image_tag @cocktail.photo.key, height: 300, width: 300, crop: :fill %>
+  <% end %>
     <ul>
       <div>
         <h2><%= @cocktail.name %></h2>
         <% @cocktail.doses.each do |dose| %>
         <li>
           <div class = "recipe">
-            <%= dose.ingredient.name %>
+            <%= dose.ingredient.name %> .....
             <%= dose.description %>
           </div>
         <%= link_to 'destroy', dose, method: :delete  %>
